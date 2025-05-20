@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Эмилия — тату с настроением</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: #fff9f9;
+      --text-light: #5e5050;
+      --accent-light: #ec407a;
+      --header-light: linear-gradient(to right, #fce4ec, #f8bbd0);
+
+      --bg-dark: #1e1b1d;
+      --text-dark: #fce4ec;
+      --accent-dark: #ff80ab;
+      --header-dark: linear-gradient(to right, #3f2b3b, #6c3b5c);
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: var(--header-light);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    body.dark header {
+      background: var(--header-dark);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+      font-weight: 600;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      border-left: 4px solid var(--accent-light);
+      padding-left: 10px;
+      font-weight: 600;
+    }
+
+    body.dark h2 {
+      border-color: var(--accent-dark);
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 45%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    body.dark .feature {
+      background: #2e2e2e;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    .button,
+    .theme-toggle,
+    .reveal-toggle,
+    .telegram-button {
+      background: var(--accent-light);
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-block;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    .telegram-button {
+      font-size: 1.1em;
+      display: block;
+      width: fit-content;
+    }
+
+    body.dark .button,
+    body.dark .theme-toggle,
+    body.dark .reveal-toggle,
+    body.dark .telegram-button {
+      background: var(--accent-dark);
+    }
+
+    .reveal {
+      margin-top: 15px;
+      background: #fce4ec;
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    body.dark .reveal {
+      background: #372d34;
+    }
+
+    .instagram-placeholder {
+      background: #fce4ec;
+      padding: 30px;
+      text-align: center;
+      border: 1px dashed var(--accent-light);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    body.dark .instagram-placeholder {
+      background: #372d34;
+      border-color: var(--accent-dark);
+    }
+
+    .contact {
+      background: var(--header-light);
+      padding: 30px 20px;
+      text-align: center;
+      color: #3a2e3a;
+    }
+
+    body.dark .contact {
+      background: var(--header-dark);
+      color: #fce4ec;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    @media (max-width: 600px) {
+      .feature {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()">Сменить тему</button>
+
+<header>
+  <h1>Эмилия — тату с настроением</h1>
+  <p>тонкие линии, нежный стиль и бережный подход</p>
+</header>
+
+<section>
+  <h2>🌸 Немного обо мне</h2>
+  <p>Меня зовут Эмилия. Мой путь начался с макияжа — я была бровистом, искала симметрию и выражение. Сейчас я переношу эту точность и деликатность в тату. Работаю в fine-line стиле, люблю тонкость, индивидуальность и душу в каждой линии.</p>
+</section>
+
+<section>
+  <h2>✨ Услуги</h2>
+  <ul>
+    <li>Тонкие татуировки — от 1000 ₽</li>
+    <li>Персональные эскизы под каждую идею</li>
+    <li>Мягкая работа, стерильность и забота</li>
+    <li>Поддержка и рекомендации по уходу</li>
+  </ul>
+</section>
+
+<section>
+  <h2>💗 Почему ко мне возвращаются</h2>
+  <div class="feature-grid">
+    <div class="feature">🌷 Индивидуальный подход — я не повторяюсь, каждая тату уникальна</div>
+    <div class="feature">🪡 Тонкие линии и минимализм — люблю простоту и смысл</div>
+    <div class="feature">🧴 Чистота и уют — дезинфекция, маски, одноразовые расходники</div>
+    <div class="feature">💬 Тёплый диалог — мне важно, чтобы тебе было спокойно</div>
+  </div>
+</section>
+
+<section>
+  <h2>🕊️ Как проходит сеанс</h2>
+  <ul>
+    <li>Обсуждаем твою идею</li>
+    <li>Я рисую эскиз и согласовываю с тобой</li>
+    <li>Готовим место, дезинфицируем</li>
+    <li>Работаю в комфортном ритме, с паузами и заботой</li>
+    <li>Рассказываю, как правильно ухаживать</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🫧 Отзывы</h2>
+  <p>“Очень мягко, красиво и почти не больно. Спасибо за заботу и атмосферу.” — <i>Марина</i></p>
+  <p>“Моя первая тату — и я не боялась. Всё стерильно и спокойно. Я влюблена.” — <i>Алена</i></p>
+</section>
+
+<section>
+  <h2>🎁 Секретный бонус</h2>
+  <button class="reveal-toggle" onclick="togglePromo()">Открыть промокод</button>
+  <div class="reveal" id="promo">
+    <h3>Промокод: <strong>ты супер</strong></h3>
+    <p>Скажи его перед первым сеансом и получи 10% скидку + мини-уход в подарок</p>
+  </div>
+</section>
+
+<section>
+  <h2>📸 Instagram</h2>
+  <div class="instagram-placeholder">
+    Instagram-лента от @krymnash появится здесь после загрузки сайта онлайн.
+    <br /><br />
+    Профиль: <a href="https://instagram.com/krymnash" target="_blank">@krymnash</a>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <a class="telegram-button" href="https://t.me/browsnash" target="_blank">Записаться в Telegram</a>
+</section>
+
+<div class="contact">
+  <p>Телефон: <a href="tel:+79922096531">+7 992 209-65-31</a></p>
+</div>
+
+<script>
+  function togglePromo() {
+    const promo = document.getElementById("promo");
+    promo.style.display = promo.style.display === "block" ? "none" : "block";
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+  }
+
+  window.onload = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") document.body.classList.add("dark");
+  };
+</script>
+</body>
+</html>
